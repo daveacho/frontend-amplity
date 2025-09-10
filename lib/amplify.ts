@@ -41,6 +41,7 @@
 //     console.error('Missing Amplify configuration:', { userPoolId, userPoolClientId, region });
 //   }
 
+
 'use client';
 
 import { Amplify } from 'aws-amplify';
@@ -57,6 +58,9 @@ if (typeof window !== 'undefined') {
         Cognito: {
           userPoolId: userPoolId,
           userPoolClientId: userPoolClientId,
+          loginWith: {
+            email: true,
+          },
         },
       },
     };
